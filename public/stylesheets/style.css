@@ -87,7 +87,6 @@ form label {
 .wrapper {
     width: 100%;
     min-height: 100%;
-    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -99,11 +98,15 @@ form label {
     justify-content: space-between;
 }
 
-header,
+header {
+    background-color: #333;
+    border-bottom: 1px solid #ccc
+}
+
 .site-row,
 .info-section,
 .form-heading {
-    background-color: #2c2307;
+    background-color: #0c0c0c;
 }
 
 .login-page,
@@ -133,7 +136,7 @@ header,
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 0 1%;
 }
@@ -144,19 +147,16 @@ header h1 {
 
 .site-row {
     display: flex;
-    border-bottom: 1px solid #ccc;
     justify-content: center;
 }
 
 .site-name {
     margin-bottom: 10px;
     padding: 0px 10px;
-    border-style: double;
 }
 
 main {
     flex: 1;
-    padding: 2% 4%;
 }
 
 .btn-no-style {
@@ -264,4 +264,27 @@ main {
 .btn,
 #post-title {
     width: 100%;
+}
+
+
+/* login  */
+
+#login-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-title {
+    text-align: center;
+}
+
+#signup-link {
+    text-align: center;
 }
