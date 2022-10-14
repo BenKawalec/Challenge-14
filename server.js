@@ -1,6 +1,6 @@
 const express = require('express');
 const routes = require('./controllers');
-const sequelize = require('./config/connection');
+// const sequelize = require('./config/connection');
 const path = require('path');
 const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
@@ -18,6 +18,17 @@ const sess = {
         db: sequelize
     })
 };
+
+const sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PW,
+    {
+      host: 'localhost',
+      dialect: 'mysql',
+      port: 3306,
+    },
+  );
 app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
